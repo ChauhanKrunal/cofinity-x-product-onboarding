@@ -142,6 +142,7 @@ path "${each.value.secret_engine_name}/*" {
 EOT
 }
 
+# Need to create this for other envs /dev /int etc.
 resource "vault_policy" "product_approle_read_only_policies" {
   for_each = var.product_teams
 
