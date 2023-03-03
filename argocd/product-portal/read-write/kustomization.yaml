@@ -4,9 +4,10 @@ kind: Kustomization
 bases:
   - ../base-read-only
 
-resources:
-  - resources/avp-secret.yaml
-  - resources/namespace.yaml
+#Not needed for interim set up
+#resources: 
+#  - resources/avp-secret.yaml
+#  - resources/namespace.yaml
 
 patchesStrategicMerge:
   - resources/argo-project.yaml
