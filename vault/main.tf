@@ -3,7 +3,7 @@
 ##
 
 resource "vault_github_auth_backend" "github_login" {
-  organization = "catenax-ng"
+  organization = "Cofinity-X"
 
   tune {
     listing_visibility = "unauth"
@@ -26,12 +26,11 @@ resource "vault_auth_backend" "token-auth-backend" {
 }
 
 # VAULT OIDC Config + Role mapping to Github Teams
-# @url: https://jira.catena-x.net/browse/A1ODT-518
 resource "vault_jwt_auth_backend" "oidc_auth_backend" {
-  oidc_discovery_url = "https://dex.vault.demo.catena-x.net"
+  oidc_discovery_url = "https://dex.vault.cofinity-x.com"
   oidc_client_id     = var.vault_oidc_client_id
   oidc_client_secret = var.vault_oidc_client_secret
-  bound_issuer       = "https://dex.vault.demo.catena-x.net"
+  bound_issuer       = "https://dex.vault.cofinity-x.com"
   description        = "Vault authentication method OIDC"
   path               = "oidc"
   type               = "oidc"
@@ -48,7 +47,7 @@ resource "vault_jwt_auth_backend" "oidc_auth_backend" {
 #   DevSecOps team related resources
 ##
 
-resource "vault_mount" "devsecops-secret-engine" {
+resource "vault_mount" "devsecops_secret_engine" {
   path        = "devsecops"
   type        = "kv"
   description = "Secret engine for DevSecOps team"
@@ -66,26 +65,26 @@ path "*" {
 EOT
 }
 
-resource "vault_github_team" "dev-sec-ops" {
+resource "vault_github_team" "devsecops" {
   backend  = vault_github_auth_backend.github_login.id
   team     = "argocdadmins"
   policies = [vault_policy.vault_admin_policy.name]
 }
 
-resource "vault_jwt_auth_backend_role" "dev-sec-ops-oidc-role" {
+resource "vault_jwt_auth_backend_role" "devsecops_oidc_role" {
   backend               = vault_jwt_auth_backend.oidc_auth_backend.path
   allowed_redirect_uris = [
-    "http://localhost:8250/oidc/callback", "https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"
+    "http://localhost:8250/oidc/callback", "https://vault.cofinity-x.com/ui/vault/auth/oidc/oidc/callback"
   ]
   role_type      = "oidc"
   user_claim     = "email"
   oidc_scopes    = ["openid", "email", "groups"]
   token_policies = [vault_policy.vault_admin_policy.name]
   role_name      = "devsecops-admins"
-  bound_claims   = { "groups" : "catenax-ng:argocdadmins" }
+  bound_claims   = { "groups" : "Cofinity-X:argocdadmins" }
 }
 
-resource "vault_approle_auth_backend_role" "devsecops-approle" {
+resource "vault_approle_auth_backend_role" "devsecops_approle" {
   backend        = vault_auth_backend.approle.path
   role_name      = "devsecops"
   token_policies = [vault_policy.vault_admin_policy.name]
@@ -98,31 +97,30 @@ resource "vault_approle_auth_backend_role" "devsecops-approle" {
   token_ttl          = 1200
 }
 
-# existing ones cannot be imported, so new ones will be created
-resource "vault_approle_auth_backend_role_secret_id" "devsecops-approle-secret-id" {
+# # existing ones cannot be imported, so new ones will be created
+resource "vault_approle_auth_backend_role_secret_id" "devsecops_approle_secret_id" {
   backend   = vault_auth_backend.approle.path
-  role_name = vault_approle_auth_backend_role.devsecops-approle.role_name
+  role_name = vault_approle_auth_backend_role.devsecops_approle.role_name
 
   # change will be done outside of terraform if not
   cidr_list = []
 }
 
-resource "vault_generic_secret" "devsecops-avp-secret" {
-  path = "${vault_mount.devsecops-secret-engine.path}/avp-config/devsecops"
+resource "vault_generic_secret" "devsecops_avp_secret" {
+  path = "${vault_mount.devsecops_secret_engine.path}/avp-config/devsecops"
 
   data_json = <<EOT
 {
-  "role_id":   "${vault_approle_auth_backend_role.devsecops-approle.role_id}",
-  "secret_id": "${vault_approle_auth_backend_role_secret_id.devsecops-approle-secret-id.secret_id}"
+  "role_id":   "${vault_approle_auth_backend_role.devsecops_approle.role_id}",
+  "secret_id": "${vault_approle_auth_backend_role_secret_id.devsecops_approle_secret_id.secret_id}"
 }
 EOT
 }
 
-##
-#   product team related resources
-##
-
-resource "vault_mount" "product-team-secret-engines" {
+# ##
+# #   product team related resources
+# ##
+resource "vault_mount" "product_team_secret_engines" {
   for_each = var.product_teams
 
   path        = each.value.secret_engine_name
@@ -133,7 +131,7 @@ resource "vault_mount" "product-team-secret-engines" {
   }
 }
 
-resource "vault_policy" "product-team-policies" {
+resource "vault_policy" "product_team_policies" {
   for_each = var.product_teams
 
   name   = each.value.ui_policy_name
@@ -144,7 +142,7 @@ path "${each.value.secret_engine_name}/*" {
 EOT
 }
 
-resource "vault_policy" "product-approle-read-only-policies" {
+resource "vault_policy" "product_approle_read_only_policies" {
   for_each = var.product_teams
 
   name   = each.value.approle_policy_name
@@ -155,7 +153,7 @@ path "${each.value.secret_engine_name}/*" {
 EOT
 }
 
-resource "vault_github_team" "github-product-teams" {
+resource "vault_github_team" "github_product_teams" {
   for_each = var.product_teams
 
   backend  = vault_github_auth_backend.github_login.id
@@ -163,11 +161,11 @@ resource "vault_github_team" "github-product-teams" {
   policies = [each.value.ui_policy_name]
 }
 
-##
-#   product team approles
-##
+# ##
+# #   product team approles
+# ##
 
-resource "vault_approle_auth_backend_role" "product-team-approles" {
+resource "vault_approle_auth_backend_role" "product_team_approles" {
   for_each = var.product_teams
 
   backend        = vault_auth_backend.approle.path
@@ -182,26 +180,26 @@ resource "vault_approle_auth_backend_role" "product-team-approles" {
   token_ttl          = 1200
 }
 
-# existing ones cannot be imported, so new ones will be created
-resource "vault_approle_auth_backend_role_secret_id" "product-teams-approle-ids" {
+# # existing ones cannot be imported, so new ones will be created
+resource "vault_approle_auth_backend_role_secret_id" "product_teams_approle_ids" {
   for_each = var.product_teams
 
   backend   = vault_auth_backend.approle.path
-  role_name = vault_approle_auth_backend_role.product-team-approles[each.key].role_name
+  role_name = vault_approle_auth_backend_role.product_team_approles[each.key].role_name
 
   # change will be done outside of terraform if not
   cidr_list = []
 }
 
-resource "vault_generic_secret" "product-team-avp-secrets" {
+resource "vault_generic_secret" "product_team_avp_secrets" {
   for_each = var.product_teams
 
-  path = "${vault_mount.devsecops-secret-engine.path}/avp-config/${each.value.avp_secret_name}"
+  path = "${vault_mount.devsecops_secret_engine.path}/avp-config/${each.value.avp_secret_name}"
 
   data_json = <<EOT
 {
-  "role_id":   "${vault_approle_auth_backend_role.product-team-approles[each.key].role_id}",
-  "secret_id": "${vault_approle_auth_backend_role_secret_id.product-teams-approle-ids[each.key].secret_id}"
+  "role_id":   "${vault_approle_auth_backend_role.product_team_approles[each.key].role_id}",
+  "secret_id": "${vault_approle_auth_backend_role_secret_id.product_teams_approle_ids[each.key].secret_id}"
 }
 EOT
 }
@@ -211,12 +209,12 @@ resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
 
   backend               = vault_jwt_auth_backend.oidc_auth_backend.path
   allowed_redirect_uris = [
-    "http://localhost:8250/oidc/callback", "https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"
+    "http://localhost:8250/oidc/callback", "https://vault.cofinity-x.com/ui/vault/auth/oidc/oidc/callback"
   ]
   role_type      = "oidc"
   user_claim     = "email"
   oidc_scopes    = ["openid", "email", "groups"]
   token_policies = [each.value.ui_policy_name]
   role_name      = each.value.github_team
-  bound_claims   = { "groups" : "catenax-ng:${each.value.github_team}" }
+  bound_claims   = { "groups" : "Cofinity-X:${each.value.github_team}" }
 }
