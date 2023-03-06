@@ -29,7 +29,7 @@ resources:
   # - ../../argocd/product-traceability-irs/read-write
   # - ../../argocd/product-value-added-service/read-write
   - storage-class/standard-ssd-lrs-retain.yaml
-
+  - storage-class/standard-fileshare-lrs-retain.yaml
 #  - pull-secret/secret.yaml Not needed until we start using private container images
 
 # patchesStrategicMerge:
