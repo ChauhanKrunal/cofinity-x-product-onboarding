@@ -19,7 +19,7 @@ resources:
   # - ../../argocd/product-innovation-radar/read-write
   # - ../../argocd/product-item-relationship-service-frontend/read-write
   # - ../../argocd/product-knowledge/read-write
-  # - ../../argocd/product-managed-identity-wallets/read-write
+  - ../../argocd/product-managed-identity-wallets/read-write
   # - ../../argocd/product-material-pass/read-write
   - ../../argocd/product-portal/read-write
   # - ../../argocd/product-r-strategy-assistant/read-write
