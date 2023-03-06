@@ -10,3 +10,4 @@ bases:
 
 patchesStrategicMerge:
   - resources/argo-project.yaml
+  - ../base-read-only/resources/argo-repo.yaml

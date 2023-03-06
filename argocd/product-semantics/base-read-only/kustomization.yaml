@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
 
   - resources/argo-project.yaml
-  - resources/argo-repo.yaml
+#  - resources/argo-repo.yaml
   - resources/avp-secret.yaml
   - resources/namespace.yaml
