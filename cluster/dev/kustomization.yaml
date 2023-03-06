@@ -23,7 +23,7 @@ resources:
   # - ../../argocd/product-material-pass/read-write
   - ../../argocd/product-portal/read-write
   # - ../../argocd/product-r-strategy-assistant/read-write
-  - ../../argocd/product-semantics/read-write
+  # - ../../argocd/product-semantics/read-write
   # - ../../argocd/product-test-data-generator/read-write
   # - ../../argocd/product-traceability-foss/read-write
   # - ../../argocd/product-traceability-irs/read-write
