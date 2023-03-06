@@ -16,11 +16,11 @@ spec:
         - p, proj:project-semantics:team-admin, applications, *, project-semantics/*, allow
         - p, proj:project-semantics:team-admin, exec, create, project-semantics/*, allow
       groups:
-        - catenax-ng:product-semantics
+        - Cofinity-X:product-semantics
     - name: read-only
       description: Read only access to the project
       policies:
         - p, proj:project-semantics:read-only, applications, get, project-semantics/*, allow
       groups:
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

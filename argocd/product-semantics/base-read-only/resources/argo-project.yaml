@@ -27,6 +27,6 @@ spec:
         - p, proj:project-semantics:project-read-only, applications, get, project-semantics/*, allow
         - p, proj:project-semantics:project-read-only, exec, create, project-semantics/*, allow
       groups:
-        - catenax-ng:product-semantics
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:product-semantics
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

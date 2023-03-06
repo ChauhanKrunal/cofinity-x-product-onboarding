@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:catenax-ng/product-semantics
+  url: git@github.com:Cofinity-X/cofinity-x-semantic-hub-core.git
   name: product-semantics-repo
   project: project-semantics
   sshPrivateKey: |
