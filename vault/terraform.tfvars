@@ -45,7 +45,7 @@ product_teams = {
     ui_policy_name : "bpdm-rw"
     approle_name : "bpdm"
     approle_policy_name : "bpdm-ro"
-    github_team : "product-bpdm"
+    github_team : "bpdm"
     avp_secret_name : "bpdm"
   },
   # "catenax-at-home" : {
@@ -117,7 +117,7 @@ product_teams = {
     ui_policy_name : "managed-identity-wallets-rw"
     approle_name : "managed-identity-wallets"
     approle_policy_name : "managed-identity-wallets-ro"
-    github_team : "product-managed-identity-wallets"
+    github_team : "miw"
     avp_secret_name : "managed-identity-wallets"
   },
   # "material-pass" : {
@@ -135,7 +135,7 @@ product_teams = {
     ui_policy_name : "portal-rw"
     approle_name : "portal"
     approle_policy_name : "portal-ro"
-    github_team : "product-portal"
+    github_team : "portal-backend"
     avp_secret_name : "portal"
   },
   # "traceability-irs" : {

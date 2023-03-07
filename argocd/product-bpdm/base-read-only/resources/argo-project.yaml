@@ -25,6 +25,6 @@ spec:
         - p, proj:project-bpdm:project-read-only, applications, get, project-bpdm/*, allow
         - p, proj:project-bpdm:project-read-only, exec, create, project-bpdm/*, allow
       groups:
-        - catenax-ng:product-bpdm
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:product-bpdm
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

@@ -81,7 +81,7 @@ resource "vault_jwt_auth_backend_role" "devsecops_oidc_role" {
   oidc_scopes    = ["openid", "email", "groups"]
   token_policies = [vault_policy.vault_admin_policy.name]
   role_name      = "devsecops-admins"
-  bound_claims   = { "groups" : "Cofinity-X:argocdadmins" }
+  bound_claims   = { "groups" : "Cofinity-X:Argo-CD-Operation" }
 }
 
 resource "vault_approle_auth_backend_role" "devsecops_approle" {
