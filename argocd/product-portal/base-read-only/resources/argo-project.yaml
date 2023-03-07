@@ -27,6 +27,6 @@ spec:
         - p, proj:project-portal:project-read-only, applications, get, project-portal/*, allow
         - p, proj:project-portal:project-read-only, exec, create, project-portal/*, allow
       groups:
-        - Cofinity-X:product-portal
+        - Cofinity-X:Portal Backend
         - Cofinity-X:release-management
         - Cofinity-X:test-management

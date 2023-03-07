@@ -16,7 +16,7 @@ spec:
         - p, proj:project-bpdm:team-admin, applications, *, project-bpdm/*, allow
         - p, proj:project-bpdm:team-admin, exec, create, project-bpdm/*, allow
       groups:
-        - catenax-ng:product-bpdm
+        - Cofinity-X:BPDM
     - name: read-only
       description: Read only access to the project
       policies:

@@ -20,7 +20,7 @@ spec:
         - p, proj:project-portal:team-admin, applications, *, project-portal/*, allow
         - p, proj:project-portal:team-admin, exec, create, project-portal/*, allow
       groups:
-        - Cofinity-X:product-portal
+        - Cofinity-X:Portal Backend
     - name: read-only
       description: Read only access to the project
       policies:

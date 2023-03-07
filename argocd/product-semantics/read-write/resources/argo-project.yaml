@@ -16,7 +16,7 @@ spec:
         - p, proj:project-semantics:team-admin, applications, *, project-semantics/*, allow
         - p, proj:project-semantics:team-admin, exec, create, project-semantics/*, allow
       groups:
-        - Cofinity-X:product-semantics
+        - Cofinity-X:Semantic hub
     - name: read-only
       description: Read only access to the project
       policies:

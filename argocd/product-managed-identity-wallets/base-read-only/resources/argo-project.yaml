@@ -25,6 +25,6 @@ spec:
         - p, proj:project-managed-identity-wallets:project-read-only, applications, get, project-managed-identity-wallets/*, allow
         - p, proj:project-managed-identity-wallets:project-read-only, exec, create, project-managed-identity-wallets/*, allow
       groups:
-        - Cofinity-X:product-managed-identity-wallets
+        - Cofinity-X:MIW
         - Cofinity-X:release-management
         - Cofinity-X:test-management
