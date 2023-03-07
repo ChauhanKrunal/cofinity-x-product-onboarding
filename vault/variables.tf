@@ -17,6 +17,7 @@ variable "product_teams" {
     approle_name        = string
     approle_policy_name = string
     github_team         = string
+    github_team_slug    = string
     avp_secret_name     = string
   }))
 }

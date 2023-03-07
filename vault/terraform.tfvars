@@ -45,7 +45,8 @@ product_teams = {
     ui_policy_name : "bpdm-rw"
     approle_name : "bpdm"
     approle_policy_name : "bpdm-ro"
-    github_team : "bpdm"
+    github_team : "BPDM"
+    github_team_slug : "bpdm"
     avp_secret_name : "bpdm"
   },
   # "catenax-at-home" : {
@@ -117,7 +118,8 @@ product_teams = {
     ui_policy_name : "managed-identity-wallets-rw"
     approle_name : "managed-identity-wallets"
     approle_policy_name : "managed-identity-wallets-ro"
-    github_team : "miw"
+    github_team : "MIW"
+    github_team_slug : "miw"
     avp_secret_name : "managed-identity-wallets"
   },
   # "material-pass" : {
@@ -135,7 +137,8 @@ product_teams = {
     ui_policy_name : "portal-rw"
     approle_name : "portal"
     approle_policy_name : "portal-ro"
-    github_team : "portal-backend"
+    github_team : "Portal Backend"
+    github_team_slug : "portal-backend"
     avp_secret_name : "portal"
   },
   # "traceability-irs" : {
@@ -154,7 +157,8 @@ product_teams = {
     ui_policy_name : "semantics-rw"
     approle_name : "semantics"
     approle_policy_name : "semantics-ro"
-    github_team : "product-semantics"
+    github_team : "Semantic hub"
+    github_team_slug : "semantic-hub"
     avp_secret_name : "semantics"
   },
   # "test-data-generator" : {

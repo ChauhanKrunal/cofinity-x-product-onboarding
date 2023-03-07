@@ -67,7 +67,7 @@ EOT
 
 resource "vault_github_team" "devsecops" {
   backend  = vault_github_auth_backend.github_login.id
-  team     = "argocdadmins"
+  team     = "argo-cd-operation"
   policies = [vault_policy.vault_admin_policy.name]
 }
 
@@ -158,7 +158,7 @@ resource "vault_github_team" "github_product_teams" {
   for_each = var.product_teams
 
   backend  = vault_github_auth_backend.github_login.id
-  team     = each.value.github_team
+  team     = each.value.github_team_slug
   policies = [each.value.ui_policy_name]
 }
 
@@ -216,6 +216,7 @@ resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
   user_claim     = "email"
   oidc_scopes    = ["openid", "email", "groups"]
   token_policies = [each.value.ui_policy_name]
-  role_name      = each.value.github_team
+  role_name      = each.value.github_team_slug
   bound_claims   = { "groups" : "Cofinity-X:${each.value.github_team}" }
 }
+
