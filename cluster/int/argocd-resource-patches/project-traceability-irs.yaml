@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: project-traceability-irs
-  namespace: argocd
+
 spec:
   roles:
     - name: team-admin
