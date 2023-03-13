@@ -85,15 +85,16 @@ product_teams = {
   #   github_team : "product-esc-backbone"
   #   avp_secret_name : "esc-backbone"
   # },
-  # "essential-services" : {
-  #   name : "essential-services",
-  #   secret_engine_name : "essential-services"
-  #   ui_policy_name : "essential-services-rw"
-  #   approle_name : "essential-services"
-  #   approle_policy_name : "essential-services-ro"
-  #   github_team : "product-essential-services"
-  #   avp_secret_name : "essential-services"
-  # },
+  "essential-services" : {
+    name : "essential-services",
+    secret_engine_name : "essential-services"
+    ui_policy_name : "essential-services-rw"
+    approle_name : "essential-services"
+    approle_policy_name : "essential-services-ro"
+    github_team : "SD-Factory"
+    github_team_slug : "sd-factory"
+    avp_secret_name : "essential-services"
+  },
   # "explorer" : {
   #   name : "explorer",
   #   secret_engine_name : "explorer"
