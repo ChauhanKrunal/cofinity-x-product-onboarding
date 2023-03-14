@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:catenax-ng/product-idses-frontend-apps
+  url: git@github.com:Cofinity-X/cofinity-x-sd-factory-core.git
   name: product-idses-frontend-apps-repo
   project: project-essential-services
   sshPrivateKey: |

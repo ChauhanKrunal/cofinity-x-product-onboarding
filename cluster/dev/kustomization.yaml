@@ -12,7 +12,7 @@ resources:
   # - ../../argocd/product-dft/read-write
   # - ../../argocd/product-edc/read-write
   # - ../../argocd/product-esc-backbone/read-write
-  # - ../../argocd/product-essential-services/read-write
+  - ../../argocd/product-essential-services/read-write
   # - ../../argocd/product-et-demonstrators/read-write
   # - ../../argocd/product-example/read-write
   # - ../../argocd/product-explorer/read-write

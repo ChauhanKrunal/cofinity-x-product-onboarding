@@ -25,6 +25,6 @@ spec:
         - p, proj:project-essential-services:project-read-only, applications, get, project-essential-services/*, allow
         - p, proj:project-essential-services:project-read-only, exec, create, project-essential-services/*, allow
       groups:
-        - catenax-ng:product-essential-services
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:product-essential-services
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

@@ -22,5 +22,5 @@ spec:
       policies:
         - p, proj:project-essential-services:read-only, applications, get, project-essential-services/*, allow
       groups:
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
