@@ -16,7 +16,7 @@ spec:
         - p, proj:project-essential-services:team-admin, applications, *, project-essential-services/*, allow
         - p, proj:project-essential-services:team-admin, exec, create, project-essential-services/*, allow
       groups:
-        - catenax-ng:product-essential-services
+        - Cofinity-X:SD-Factory
     - name: read-only
       description: Read only access to the project
       policies:
