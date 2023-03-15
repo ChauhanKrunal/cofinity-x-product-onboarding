@@ -30,7 +30,7 @@ resources:
 
   - storage-class/standard-ssd-lrs-retain.yaml
   - storage-class/standard-fileshare-lrs-retain.yaml
-  # - pull-secret/secret.yaml
+  - pull-secret/secret.yaml
 
 #patchesStrategicMerge:
 #  - argocd-resource-patches/project-traceability-irs.yaml
