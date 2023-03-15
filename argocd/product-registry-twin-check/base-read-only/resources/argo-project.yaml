@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-registry-twin-check
+  namespace: argocd
+spec:
+  description: Project for registry twin check
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-registry-twin-check
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: project-read-only
+      description: provide read-only access to project
+      policies:
+        - p, proj:project-registry-twin-check:project-read-only, applications, get, project-registry-twin-check/*, allow
+        - p, proj:project-registry-twin-check:project-read-only, exec, create, project-registry-twin-check/*, allow
+      groups:
+        - Cofinity-X:product-registry-twin-check
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
