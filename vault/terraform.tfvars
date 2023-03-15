@@ -207,15 +207,16 @@ product_teams = {
   #   github_team : "product-knowledge"
   #   avp_secret_name : "knowledge"
   # },
-  # "registry-twin-check" : {
-  #   name : "registry-twin-check",
-  #   secret_engine_name : "registry-twin-check"
-  #   ui_policy_name : "registry-twin-check-rw"
-  #   approle_name : "registry-twin-check"
-  #   approle_policy_name : "registry-twin-check-ro"
-  #   github_team : "product-registry-twin-check"
-  #   avp_secret_name : "registry-twin-check"
-  # },
+  "registry-twin-check" : {
+    name : "registry-twin-check",
+    secret_engine_name : "registry-twin-check"
+    ui_policy_name : "registry-twin-check-rw"
+    approle_name : "registry-twin-check"
+    approle_policy_name : "registry-twin-check-ro"
+    github_team : "Digital Twin Registry"
+    github_team_slug : "digital-twin-registry"
+    avp_secret_name : "registry-twin-check"
+  },
   # "business-partner-certificates" : {
   #   name : "business-partner-certificates",
   #   secret_engine_name : "business-partner-certificates"
