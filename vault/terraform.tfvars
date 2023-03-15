@@ -213,7 +213,8 @@ product_teams = {
     ui_policy_name : "registry-twin-check-rw"
     approle_name : "registry-twin-check"
     approle_policy_name : "registry-twin-check-ro"
-    github_team : "product-registry-twin-check"
+    github_team : "Digital Twin Registry"
+    github_team_slug : "digital-twin-registry"
     avp_secret_name : "registry-twin-check"
   },
   # "business-partner-certificates" : {

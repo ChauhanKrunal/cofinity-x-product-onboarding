@@ -16,7 +16,7 @@ spec:
         - p, proj:project-registry-twin-check:team-admin, applications, *, project-registry-twin-check/*, allow
         - p, proj:project-registry-twin-check:team-admin, exec, create, project-registry-twin-check/*, allow
       groups:
-        - Cofinity-X:product-registry-twin-check
+        - Cofinity-X:Digital Twin Registry
     - name: read-only
       description: Read only access to the project
       policies:
