@@ -252,5 +252,15 @@ product_teams = {
   #   approle_policy_name : "r-strategy-assistant-ro"
   #   github_team : "product-r-strategy-assistant"
   #   avp_secret_name : "r-strategy-assistant"
-  # }
+  # },
+  "daps" : {
+    name : "daps",
+    secret_engine_name : "daps"
+    ui_policy_name : "daps-rw"
+    approle_name : "daps"
+    approle_policy_name : "daps-ro"
+    github_team : "DAPS"
+    github_team_slug : "daps"
+    avp_secret_name : "daps"
+  }
 }

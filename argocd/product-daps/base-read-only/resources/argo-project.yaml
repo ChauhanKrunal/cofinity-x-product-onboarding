@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-daps
+  namespace: argocd
+spec:
+  description: Project for team daps
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-daps
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: project-read-only
+      description: provide read-only access to project
+      policies:
+        - p, proj:project-daps:project-read-only, applications, get, project-daps/*, allow
+        - p, proj:project-daps:project-read-only, exec, create, project-daps/*, allow
+      groups:
+        - Cofinity-X:DAPS
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
