@@ -27,6 +27,7 @@ resources:
   # - ../../argocd/product-traceability-foss/read-write
   # - ../../argocd/product-traceability-irs/read-write
   # - ../../argocd/product-value-added-service/read-write
+  - ../../argocd/product-registry-twin-check/read-write
 
   - storage-class/standard-ssd-lrs-retain.yaml
   - storage-class/standard-fileshare-lrs-retain.yaml
