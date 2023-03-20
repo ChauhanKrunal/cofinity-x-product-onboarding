@@ -195,7 +195,8 @@ product_teams = {
     ui_policy_name : "value-added-service-rw"
     approle_name : "value-added-service"
     approle_policy_name : "value-added-service-ro"
-    github_team : "product-value-added-service"
+    github_team : "VAS"
+    github_team_slug : "vas"
     avp_secret_name : "value-added-service"
   },
   # "knowledge" : {

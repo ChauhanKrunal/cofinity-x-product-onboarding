@@ -7,8 +7,6 @@ spec:
   destinations:
   - namespace: product-value-added-service
     server: https://kubernetes.default.svc
-  - namespace: product-value-added-service
-    server: https://kubernetes.default.svc
   roles:
   - name: team-admin
     description: All access to applications inside project-value-added-service.
@@ -16,7 +14,7 @@ spec:
     - p, proj:project-value-added-service:team-admin, applications, *, project-value-added-service/*, allow
     - p, proj:project-value-added-service:team-admin, exec, create, project-value-added-service/*, allow
     groups:
-    - catenax-ng:product-value-added-service
+    - Cofinity-X:VAS
   - name: read-only
     description: Read only access to the project
     policies:

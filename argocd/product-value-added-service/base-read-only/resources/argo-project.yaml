@@ -10,8 +10,6 @@ spec:
   destinations:
   - namespace: product-value-added-service
     server: https://kubernetes.default.svc
-  - namespace: product-value-added-service
-    server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
   - group: ''
@@ -27,6 +25,6 @@ spec:
     - p, proj:project-value-added-service:project-read-only, applications, get, project-value-added-service/*, allow
     - p, proj:project-value-added-service:project-read-only, exec, create, project-value-added-service/*, allow
     groups:
-    - Cofinity-X-ng:product-value-added-service
-    - Cofinity-X-ng:release-management
-    - Cofinity-X-ng:test-management
+    - Cofinity-X:VAS
+    - Cofinity-X:release-management
+    - Cofinity-X:test-management
