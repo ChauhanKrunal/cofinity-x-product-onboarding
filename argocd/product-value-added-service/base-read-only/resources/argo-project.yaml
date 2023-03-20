@@ -6,27 +6,27 @@ metadata:
 spec:
   description: Project for team value-added-service
   sourceRepos:
-    - '*'
+  - '*'
   destinations:
-    - namespace: product-value-added-service
-      server: https://kubernetes.default.svc
-    - namespace: product-value-added-service-pen
-      server: https://kubernetes.default.svc
+  - namespace: product-value-added-service
+    server: https://kubernetes.default.svc
+  - namespace: product-value-added-service
+    server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
-    - group: ''
-      kind: ResourceQuota
-    - group: ''
-      kind: LimitRange
-    - group: ''
-      kind: NetworkPolicy
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange
+  - group: ''
+    kind: NetworkPolicy
   roles:
-    - name: project-read-only
-      description: provide read-only access to project
-      policies:
-        - p, proj:project-value-added-service:project-read-only, applications, get, project-value-added-service/*, allow
-        - p, proj:project-value-added-service:project-read-only, exec, create, project-value-added-service/*, allow
-      groups:
-        - catenax-ng:product-value-added-service
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+  - name: project-read-only
+    description: provide read-only access to project
+    policies:
+    - p, proj:project-value-added-service:project-read-only, applications, get, project-value-added-service/*, allow
+    - p, proj:project-value-added-service:project-read-only, exec, create, project-value-added-service/*, allow
+    groups:
+    - Cofinity-X-ng:product-value-added-service
+    - Cofinity-X-ng:release-management
+    - Cofinity-X-ng:test-management

@@ -2,37 +2,37 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  # Product Onboarding
-  # - ../../argocd/product-behaviour-twin-pilot/read-write
-  - ../../argocd/product-bpdm/read-write
-  # - ../../argocd/product-business-partner-certificates/read-write
-  # - ../../argocd/product-catenax-at-home/read-write
-  # - ../../argocd/product-data-format-transformer/read-write
-  # - ../../argocd/product-data-integrity-demonstrator/read-write
-  # - ../../argocd/product-dft/read-write
-  # - ../../argocd/product-edc/read-write
-  # - ../../argocd/product-esc-backbone/read-write
-  - ../../argocd/product-essential-services/read-write
-  # - ../../argocd/product-et-demonstrators/read-write
-  # - ../../argocd/product-example/read-write
-  # - ../../argocd/product-explorer/read-write
-  # - ../../argocd/product-innovation-radar/read-write
-  # - ../../argocd/product-item-relationship-service-frontend/read-write
-  # - ../../argocd/product-knowledge/read-write
-  - ../../argocd/product-managed-identity-wallets/read-write
-  # - ../../argocd/product-material-pass/read-write
-  - ../../argocd/product-portal/read-write
-  # - ../../argocd/product-r-strategy-assistant/read-write
-  - ../../argocd/product-semantics/read-write
-  # - ../../argocd/product-test-data-generator/read-write
-  # - ../../argocd/product-traceability-foss/read-write
-  # - ../../argocd/product-traceability-irs/read-write
-  # - ../../argocd/product-value-added-service/read-write
-  - ../../argocd/product-registry-twin-check/read-write
-  - ../../argocd/product-daps/read-write
-  - storage-class/standard-ssd-lrs-retain.yaml
-  - storage-class/standard-fileshare-lrs-retain.yaml
-  - pull-secret/secret.yaml 
+# Product Onboarding
+# - ../../argocd/product-behaviour-twin-pilot/read-write
+- ../../argocd/product-bpdm/read-write
+# - ../../argocd/product-business-partner-certificates/read-write
+# - ../../argocd/product-catenax-at-home/read-write
+# - ../../argocd/product-data-format-transformer/read-write
+# - ../../argocd/product-data-integrity-demonstrator/read-write
+# - ../../argocd/product-dft/read-write
+# - ../../argocd/product-edc/read-write
+# - ../../argocd/product-esc-backbone/read-write
+- ../../argocd/product-essential-services/read-write
+# - ../../argocd/product-et-demonstrators/read-write
+# - ../../argocd/product-example/read-write
+# - ../../argocd/product-explorer/read-write
+# - ../../argocd/product-innovation-radar/read-write
+# - ../../argocd/product-item-relationship-service-frontend/read-write
+# - ../../argocd/product-knowledge/read-write
+- ../../argocd/product-managed-identity-wallets/read-write
+# - ../../argocd/product-material-pass/read-write
+- ../../argocd/product-portal/read-write
+# - ../../argocd/product-r-strategy-assistant/read-write
+- ../../argocd/product-semantics/read-write
+# - ../../argocd/product-test-data-generator/read-write
+# - ../../argocd/product-traceability-foss/read-write
+# - ../../argocd/product-traceability-irs/read-write
+- ../../argocd/product-value-added-service/read-write
+- ../../argocd/product-registry-twin-check/read-write
+- ../../argocd/product-daps/read-write
+- storage-class/standard-ssd-lrs-retain.yaml
+- storage-class/standard-fileshare-lrs-retain.yaml
+- pull-secret/secret.yaml
 
 # patchesStrategicMerge:
 #   - argocd-resource-patches/project-traceability-irs.yaml
