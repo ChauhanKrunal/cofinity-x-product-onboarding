@@ -189,15 +189,16 @@ product_teams = {
   #   github_team : "product-behaviour-twin-pilot"
   #   avp_secret_name : "behaviour-twin-pilot"
   # },
-  # "value-added-service" : {
-  #   name : "value-added-service"
-  #   secret_engine_name : "value-added-service"
-  #   ui_policy_name : "value-added-service-rw"
-  #   approle_name : "value-added-service"
-  #   approle_policy_name : "value-added-service-ro"
-  #   github_team : "product-value-added-service"
-  #   avp_secret_name : "value-added-service"
-  # },
+  "value-added-service" : {
+    name : "value-added-service"
+    secret_engine_name : "value-added-service"
+    ui_policy_name : "value-added-service-rw"
+    approle_name : "value-added-service"
+    approle_policy_name : "value-added-service-ro"
+    github_team : "VAS"
+    github_team_slug : "vas"
+    avp_secret_name : "value-added-service"
+  },
   # "knowledge" : {
   #   name : "knowledge",
   #   secret_engine_name : "knowledge"
