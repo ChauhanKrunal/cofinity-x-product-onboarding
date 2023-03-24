@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-clearing-house
+  namespace: argocd
+spec:
+  destinations:
+    - namespace: product-clearing-house
+      server: https://kubernetes.default.svc
+    - namespace: product-clearing-house-pen
+      server: https://kubernetes.default.svc
+  roles:
+    - name: team-admin
+      description: All access to applications inside project-clearing-house.
+      policies:
+        - p, proj:project-clearing-house:team-admin, applications, *, project-clearing-house/*, allow
+        - p, proj:project-clearing-house:team-admin, exec, create, project-clearing-house/*, allow
+      groups:
+        - Cofinity-X:clearing-house
+    - name: read-only
+      description: Read only access to the project
+      policies:
+        - p, proj:project-clearing-house:read-only, applications, get, project-clearing-house/*, allow
+      groups:
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

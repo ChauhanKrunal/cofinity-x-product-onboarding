@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-clearing-house
+  namespace: argocd
+spec:
+  description: Project for Dummy clearing house
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-clearing-house
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: project-read-only
+      description: provide read-only access to project
+      policies:
+        - p, proj:project-clearing-house:project-read-only, applications, get, project-clearing-house/*, allow
+        - p, proj:project-clearing-house:project-read-only, exec, create, project-clearing-house/*, allow
+      groups:
+        - Cofinity-X:product-bpdm
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

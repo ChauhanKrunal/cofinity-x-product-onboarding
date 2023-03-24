@@ -30,6 +30,7 @@ resources:
 - ../../argocd/product-value-added-service/read-write
 - ../../argocd/product-registry-twin-check/read-write
 - ../../argocd/product-daps/read-write
+- ../../argocd/product-clearing-house/read-write
 - storage-class/standard-ssd-lrs-retain.yaml
 - storage-class/standard-fileshare-lrs-retain.yaml
 - pull-secret/secret.yaml
