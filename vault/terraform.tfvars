@@ -265,13 +265,13 @@ product_teams = {
     avp_secret_name : "daps"
   },
   "clearing-house" : {
-    name : "clearing-house",
-    secret_engine_name : "clearing-house"
+    name : "clearinghouse",
+    secret_engine_name : "clearinghouse"
     ui_policy_name : "clearing-house-rw"
-    approle_name : "clearing-house"
+    approle_name : "clearinghouse"
     approle_policy_name : "clearing-house-ro"
-    github_team : "clearing-house"
-    github_team_slug : "clearing-house"
-    avp_secret_name : "clearing-house"
+    github_team : "clearinghouse"
+    github_team_slug : "clearinghouse"
+    avp_secret_name : "clearinghouse"
   }
 }
