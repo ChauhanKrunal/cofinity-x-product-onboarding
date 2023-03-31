@@ -171,15 +171,16 @@ product_teams = {
   #   github_team : "product-test-data-generator"
   #   avp_secret_name : "test-data-generator"
   # },
-  # "traceability-foss" : {
-  #   name : "traceability-foss",
-  #   secret_engine_name : "traceability-foss"
-  #   ui_policy_name : "traceability-foss-rw"
-  #   approle_name : "traceability-foss" # traceability-foss-backend also exists
-  #   approle_policy_name : "traceability-foss-ro"
-  #   github_team : "product-traceability-foss"
-  #   avp_secret_name : "traceability-foss" # product-traceability-foss also exists
-  # },
+  "traceability-foss" : {
+    name : "traceability-foss",
+    secret_engine_name : "traceability-foss"
+    ui_policy_name : "traceability-foss-rw"
+    approle_name : "traceability-foss" # traceability-foss-backend also exists
+    approle_policy_name : "traceability-foss-ro"
+    github_team : "Trace-X"
+    github_team_slug : "trace-x"
+    avp_secret_name : "traceability-foss" # product-traceability-foss also exists
+  },
   # "behaviour-twin-pilot" : {
   #   name : "behaviour-twin-pilot"
   #   secret_engine_name : "behaviour-twin-pilot"

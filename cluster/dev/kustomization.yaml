@@ -25,7 +25,7 @@ resources:
 # - ../../argocd/product-r-strategy-assistant/read-write
 - ../../argocd/product-semantics/read-write
 # - ../../argocd/product-test-data-generator/read-write
-# - ../../argocd/product-traceability-foss/read-write
+- ../../argocd/product-traceability-foss/read-write
 # - ../../argocd/product-traceability-irs/read-write
 - ../../argocd/product-value-added-service/read-write
 - ../../argocd/product-registry-twin-check/read-write
