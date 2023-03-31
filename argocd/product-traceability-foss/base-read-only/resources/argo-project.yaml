@@ -25,6 +25,6 @@ spec:
         - p, proj:project-traceability-foss:project-read-only, applications, get, project-traceability-foss/*, allow
         - p, proj:project-traceability-foss:project-read-only, exec, create, project-traceability-foss/*, allow
       groups:
-        - Cofinity-x:Trace-X
-        - Cofinity-x:release-management
-        - Cofinity-x:test-management
+        - Cofinity-X:Trace-X
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management

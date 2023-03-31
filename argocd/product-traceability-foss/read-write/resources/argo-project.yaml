@@ -14,11 +14,11 @@ spec:
         - p, proj:project-traceability-foss:team-admin, applications, *, project-traceability-foss/*, allow
         - p, proj:project-traceability-foss:team-admin, exec, create, project-traceability-foss/*, allow
       groups:
-        - Cofinity-x:Trace-x
+        - Cofinity-X:Trace-X
     - name: read-only
       description: Read only access to the project
       policies:
         - p, proj:project-traceability-foss:read-only, applications, get, project-traceability-foss/*, allow
       groups:
-        - Cofinity-x:release-management
-        - Cofinity-x:test-management
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
