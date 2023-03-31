@@ -10,8 +10,6 @@ spec:
   destinations:
     - namespace: product-traceability-foss
       server: https://kubernetes.default.svc
-    - namespace: product-traceability-foss-pen
-      server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
     - group: ''
@@ -27,6 +25,6 @@ spec:
         - p, proj:project-traceability-foss:project-read-only, applications, get, project-traceability-foss/*, allow
         - p, proj:project-traceability-foss:project-read-only, exec, create, project-traceability-foss/*, allow
       groups:
-        - catenax-ng:product-traceability-foss
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:Trace-X
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
