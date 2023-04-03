@@ -7,8 +7,6 @@ spec:
   destinations:
     - namespace: product-traceability-irs
       server: https://kubernetes.default.svc
-    - namespace: product-traceability-irs-pen
-      server: https://kubernetes.default.svc
   roles:
     - name: team-admin
       description: All access to applications inside project-traceability-irs.
@@ -16,11 +14,11 @@ spec:
         - p, proj:project-traceability-irs:team-admin, applications, *, project-traceability-irs/*, allow
         - p, proj:project-traceability-irs:team-admin, exec, create, project-traceability-irs/*, allow
       groups:
-        - catenax-ng:product-traceability-irs
+        - Cofinity-X:Trace-X
     - name: read-only
       description: Read only access to the project
       policies:
         - p, proj:project-traceability-irs:read-only, applications, get, project-traceability-irs/*, allow
       groups:
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
