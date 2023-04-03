@@ -25,6 +25,6 @@ spec:
         - p, proj:project-traceability-irs:project-read-only, applications, get, project-traceability-irs/*, allow
         - p, proj:project-traceability-irs:project-read-only, exec, create, project-traceability-irs/*, allow
       groups:
-        - Cofinity-X:product-traceability-irs
+        - Cofinity-X:Trace-X
         - Cofinity-X:release-management
         - Cofinity-X:test-management
