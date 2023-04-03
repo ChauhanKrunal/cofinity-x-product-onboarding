@@ -7,8 +7,6 @@ spec:
   destinations:
     - namespace: product-traceability-irs
       server: https://kubernetes.default.svc
-    - namespace: product-traceability-irs-pen
-      server: https://kubernetes.default.svc
   roles:
     - name: team-admin
       description: All access to applications inside project-traceability-irs.
