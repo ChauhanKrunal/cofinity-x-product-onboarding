@@ -149,8 +149,8 @@ product_teams = {
     ui_policy_name : "traceability-irs-rw"  # remove product- prefix
     approle_name : "traceability-irs"
     approle_policy_name : "traceability-irs-ro"
-    github_team : "Trace-X"
-    github_team_slug : "trace-x"
+    github_team : "IRS"
+    github_team_slug : "irs"
     avp_secret_name : "traceablity-irs" # TYPO, but this is the secret that is used also in argo...
   },
   "semantics" : {
