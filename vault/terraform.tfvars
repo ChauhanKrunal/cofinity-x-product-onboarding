@@ -142,16 +142,17 @@ product_teams = {
     github_team_slug : "portal-backend"
     avp_secret_name : "portal"
   },
-  # "traceability-irs" : {
-  #   name : "traceability-irs",
-  #   # product- prefix does not comply with naming convention but is already in use
-  #   secret_engine_name : "traceability-irs" # traceability-irs also exists without any secret
-  #   ui_policy_name : "traceability-irs-rw"  # remove product- prefix
-  #   approle_name : "traceability-irs"
-  #   approle_policy_name : "traceability-irs-ro"
-  #   github_team : "product-traceability-irs"
-  #   avp_secret_name : "traceablity-irs" # TYPO, but this is the secret that is used also in argo...
-  # },
+  "traceability-irs" : {
+    name : "traceability-irs",
+    # product- prefix does not comply with naming convention but is already in use
+    secret_engine_name : "traceability-irs" # traceability-irs also exists without any secret
+    ui_policy_name : "traceability-irs-rw"  # remove product- prefix
+    approle_name : "traceability-irs"
+    approle_policy_name : "traceability-irs-ro"
+    github_team : "Trace-X"
+    github_team_slug : "trace-x"
+    avp_secret_name : "traceablity-irs" # TYPO, but this is the secret that is used also in argo...
+  },
   "semantics" : {
     name : "semantics",
     secret_engine_name : "semantics"

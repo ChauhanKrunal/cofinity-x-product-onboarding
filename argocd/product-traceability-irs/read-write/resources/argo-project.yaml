@@ -16,11 +16,11 @@ spec:
         - p, proj:project-traceability-irs:team-admin, applications, *, project-traceability-irs/*, allow
         - p, proj:project-traceability-irs:team-admin, exec, create, project-traceability-irs/*, allow
       groups:
-        - catenax-ng:product-traceability-irs
+        - Cofinity-X:product-traceability-irs
     - name: read-only
       description: Read only access to the project
       policies:
         - p, proj:project-traceability-irs:read-only, applications, get, project-traceability-irs/*, allow
       groups:
-        - catenax-ng:release-management
-        - catenax-ng:test-management
+        - Cofinity-X:release-management
+        - Cofinity-X:test-management
